@@ -9,7 +9,8 @@ class Cli
         @pastel = Pastel.new
 
         `reset`
-        puts "\n\n"+@pastel.green.bold("¡Bienvenidos!")+" "+@pastel.red.bold("Welcome to")+" "+ @pastel.green.bold("¡")+@pastel.red.bold("Salsa")+@pastel.green.bold("Rey")+@pastel.red.bold("!")+@pastel.red.bold("\n\nThe place ")+@pastel.green.bold("ATLANTA ")+@pastel.red.bold("goes to optimize their chips and salsa experience in the city they call home.\n\n")+@pastel.red.bold("¡")+@pastel.black.bold("V")+@pastel.yellow.bold("a")+@pastel.red.bold("m")+@pastel.black.bold("o")+@pastel.yellow.bold("s")+" "+@pastel.red.bold("A")+@pastel.black.bold("T")+@pastel.yellow.bold("L")+@pastel.red.bold("!")+"\n\n"
+        puts "\n\n"+@pastel.green.bold("                                         ¡Bienvenidos!")+" "+@pastel.red.bold("Welcome to")+" "+ @pastel.green.bold("¡")+@pastel.red.bold("Salsa")+@pastel.green.bold("Rey")+@pastel.red.bold("!")+@pastel.red.bold("\n\nThe place ")+@pastel.green.bold("ATLANTA ")+@pastel.red.bold("goes to optimize their chips and salsa experience in the city they call home.\n\n")+@pastel.green.bold("This app is all about gathering information on where to find the best chips and salsa experience in Atlanta.\n\n")+@pastel.red.bold("The information, rating, and reviews collected here focus specifically on the chips and salsa at a restaurant.\nOther apsects of the restaurant may be covered in the body of a review, but the focus should stay on chips and salsa.\nRatings are assigned according to the chips and salsa experience, and not the restaurant experience as a whole.\n\n")+@pastel.red.bold("                                                     ¡")+@pastel.black.bold("V")+@pastel.yellow.bold("a")+@pastel.red.bold("m")+@pastel.black.bold("o")+@pastel.yellow.bold("s")+" "+@pastel.red.bold("A")+@pastel.black.bold("T")+@pastel.yellow.bold("L")+@pastel.red.bold("!")+"\n\n"
+        puts "\n======================================================================================================================="
         sleep 2
         while true
             main_menu
@@ -17,7 +18,7 @@ class Cli
     end
 
     def main_menu    
-        choice = @prompt.select("\n\n"+@pastel.red.bold("This app is all about gathering information on where to find the best chips and salsa experience in Atlanta.\n\n")+@pastel.green.bold("The information, rating, and reviews collected here focus specifically on the chips and salsa at a restaurant.\nOther apsects of the restaurant may be covered in the body of a review, but the focus should stay on chips and salsa.\nRatings are assigned according to the chips and salsa experience, and not the restaurant experience as a whole.\n\n")+@pastel.red.bold("How can we enhance your chips and salsa dining experience?\n"), cycle: true, per_page: 7) do |menu|
+        choice = @prompt.select("\n\n"+@pastel.red.bold("How can we enhance your chips and salsa dining experience?\n"), cycle: true, per_page: 7) do |menu|
             menu.choice '* Login/Switch Username', 1
             menu.choice '* Write a review', 2
             menu.choice '* Find a list of restaurants in your area that have reviews', 3
@@ -41,7 +42,7 @@ class Cli
             avg_rating_by_restaurant_name
         else choice == 7
             `reset`
-            puts @pastel.green.bold("\n\nThanks for stopping by...\n\n ")+@pastel.green.bold("      ¡")+@pastel.red.bold("Salsa")+@pastel.green.bold("Rey")+@pastel.red.bold("!")+@pastel.green.bold("\n\nPlease come again soon!\n\n\n\n")+@pastel.green.bold("¡")+@pastel.red.bold("GRACIAS")+" "+@pastel.green.bold("y")+" "+@pastel.red.bold("ADIOS")+@pastel.green.bold("!")+"\n\n\n"
+            puts @pastel.green.bold("\n\n                                               Thanks")+@pastel.red.bold(" for ")+@pastel.green.bold("stopping ")+@pastel.red.bold("by")+@pastel.green.bold(".")+@pastel.red.bold(".")+@pastel.green.bold(".\n\n\n")+@pastel.green.bold("                                                      ¡")+@pastel.red.bold("Salsa")+@pastel.green.bold("Rey")+@pastel.red.bold("!")+@pastel.green.bold("\n\n\n                                                Please ")+@pastel.red.bold("come ")+@pastel.green.bold("again ")+@pastel.red.bold("soon")+@pastel.green.bold("!\n\n\n\n")+@pastel.green.bold("                                                   ¡")+@pastel.red.bold("GRACIAS")+" "+@pastel.green.bold("y")+" "+@pastel.red.bold("ADIOS")+@pastel.green.bold("!")+"\n\n\n"
             exit
         end
     end
